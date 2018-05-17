@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activity.alarmactivity.AlarmMainActivity">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/end_blue">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/hor_guideline_15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.13" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/out_hor_guideline_90"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.90" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/ver_guideline_60"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.67" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/ver_guideline_80"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.80" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/ver_guideline_95"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90" />
+
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_year_month"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:layout_marginTop="20dp"
+            android:gravity="bottom|end"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            android:text="11111"
+            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_80"
+            app:layout_constraintStart_toStartOf="@id/ver_guideline_60"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:layout_marginTop="20dp"
+            android:gravity="center|bottom"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold"
+            android:text="1111111"
+            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_95"
+            app:layout_constraintStart_toEndOf="@id/ver_guideline_80"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_week"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:layout_marginTop="20dp"
+            android:gravity="bottom|start"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold"
+            android:text="111111"
+            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ver_guideline_95"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_warning"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/hor_guideline_15"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_recycleview_alarm" />
+
+        <com.gongwen.marqueen.SimpleMarqueeView
+            android:id="@+id/mv_greet_user"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:animateFirstView="true"
+            android:flipInterval="7000"
+            android:inAnimation="@anim/in_right"
+            android:outAnimation="@anim/in_left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/out_hor_guideline_90"
+            app:marqueeAnimDuration="4000"
+            app:smvTextColor="@color/black"
+            app:smvTextEllipsize="middle"
+            app:smvTextGravity="left"
+            app:smvTextSize="30sp">
+
+        </com.gongwen.marqueen.SimpleMarqueeView>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_table"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/hor_guideline_15">
+
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.20" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.10" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_30"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.30" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_50"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_70"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.70" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_90"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.90" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_40"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.40" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_60"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.60" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/hor_guideline_80"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.80" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_20"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_10" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_40"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_30" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_60"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_50" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_80"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_70" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zero"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_90" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_20" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_40" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_60" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="@id/hor_guideline_80" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two"
+                android:background="@color/toast_color"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/av_loading_view"
+            style="@style/AVLoadingIndicatorView.Large"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:visibility="visible"
+            app:indicatorColor="@color/btn_blue_bg"
+            app:indicatorName="BallTrianglePathIndicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

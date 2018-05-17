@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 填充颜色 -->
+    <solid android:color="@color/toast_bg_color" />
+    <!--内边距-->
+    <padding
+        android:bottom="@dimen/two"
+        android:left="@dimen/two"
+        android:right="@dimen/two"
+        android:top="@dimen/two" />
+    <!-- 圆角 -->
+    <corners android:radius="@dimen/ten" />
+    <!-- 描边 -->
+    <stroke
+        android:color="@color/toast_color"
+        android:width="@dimen/two" />
+</shape>

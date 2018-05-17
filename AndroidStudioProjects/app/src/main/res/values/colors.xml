@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="control_btn_color">#95a1b4</color>
+    <color name="btn_blue_bg">#0082C8</color>
+    <color name="start_blue">#0082C8</color>
+    <color name="center_blue">#0B8EC6</color>
+    <color name="end_blue">#27AAC1</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorNoAccent">#40FF81</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWarning">#FFFF40</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="toast_color">#D8DCE5</color>
+    <color name="toast_bg_color">#F7F8FA</color>
+</resources>
