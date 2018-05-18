@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 /**
- * @author fxs
+ * @author
  */
 public abstract class BaseActivity extends AppCompatActivity {
 

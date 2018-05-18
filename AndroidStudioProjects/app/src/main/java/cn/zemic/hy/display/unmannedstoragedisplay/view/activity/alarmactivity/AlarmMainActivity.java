@@ -89,6 +89,39 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, BaseR
         //获取仓库号与告警信息
         mAlarmPresenter = new AlarmPresenter(this, new AlarmRepository());
         mAlarmPresenter.getWareHouseNoAndWarningInfo(UniquenessIdFactory.getId(this));
+
+
+        //TODO
+//        List<OperateWarningInformViewModel> alarmInfo = new ArrayList<>();
+//        alarmInfo.add(new OperateWarningInformViewModel());
+//
+//        showWarning(alarmInfo, true);
+//
+//        binding.mainTitle.setOnClickListener(view -> {
+//            alarmInfo.add(new OperateWarningInformViewModel());
+//            showWarning(alarmInfo, false);
+//        });
+    }
+
+    private int getItemHeight() {
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        // 屏幕密度（像素比例：0.75/1.0/1.5/2.0）
+        float density = dm.density;
+        // 屏幕密度（每寸像素：120/160/240/320）
+//        float densityDPI = dm.densityDpi;
+//        float xdpi = dm.xdpi;
+//        float ydpi = dm.ydpi;
+//        // 屏幕宽（dip，如：320px）
+//        int screenWidthDip = dm.widthPixels;
+//        // 屏幕高（dip，如：533dip）
+//        int screenHeightDip = dm.heightPixels;
+//        // 屏幕宽（px，如：480px）
+//        int screenWidth = (int) (dm.widthPixels * density + 0.5f);
+        // 屏幕高（px，如：800px）
+        int screenHeight = (int) ((dm.heightPixels) * 0.75);
+        int marginTopAndBottom = (int) (85 * density + 0.5f);
+        return (screenHeight - marginTopAndBottom) / 10;
     }
 
     @Override
@@ -111,27 +144,6 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, BaseR
             adapter.notifyDataSetChanged();
         }
 
-    }
-
-    private int getItemHeight() {
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        // 屏幕密度（像素比例：0.75/1.0/1.5/2.0）
-        float density = dm.density;
-        // 屏幕密度（每寸像素：120/160/240/320）
-//        float densityDPI = dm.densityDpi;
-//        float xdpi = dm.xdpi;
-//        float ydpi = dm.ydpi;
-//        // 屏幕宽（dip，如：320dip）
-//        int screenWidthDip = dm.widthPixels;
-//        // 屏幕高（dip，如：533dip）
-//        int screenHeightDip = dm.heightPixels;
-//        // 屏幕宽（px，如：480px）
-//        int screenWidth = (int) (dm.widthPixels * density + 0.5f);
-        // 屏幕高（px，如：800px）
-        int screenHeight = (int) (dm.heightPixels * density + 0.5f);
-        int marginTopAndBottom = (int) (70 * density + 0.5f);
-        return (screenHeight - marginTopAndBottom) / 10;
     }
 
     @Override
