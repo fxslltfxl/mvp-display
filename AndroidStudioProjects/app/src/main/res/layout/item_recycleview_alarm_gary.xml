@@ -37,7 +37,7 @@
             android:gravity="center"
             android:text="@{VM.userNo}"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_35" />
 
 
         <TextView
@@ -48,7 +48,7 @@
             android:gravity="center"
             android:text="@{VM.userName}"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_35" />
 
 
         <TextView
@@ -59,7 +59,7 @@
             android:gravity="center"
             android:text="@{VM.warnType}"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_35" />
 
 
 
@@ -71,7 +71,7 @@
             android:gravity="center"
             android:text="@{VM.matterNo}"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_35" />
 
 
         <TextView
@@ -82,7 +82,7 @@
             android:gravity="center"
             android:text="@{VM.matterName}"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_30" />
 
 
         <TextView
@@ -93,7 +93,7 @@
             android:gravity="center"
             android:text="@{VM.warnContent}"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_16" />
+            android:textSize="@dimen/text_size_30" />
 
     </LinearLayout>
 </layout>

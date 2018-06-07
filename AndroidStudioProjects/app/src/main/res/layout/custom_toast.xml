@@ -10,6 +10,6 @@
         android:paddingLeft="@dimen/margin_20"
         android:paddingRight="@dimen/margin_20"
         android:background="@drawable/custom_toast"
-        android:textSize="@dimen/text_size_20"
+        android:textSize="@dimen/text_size_30"
         android:textColor="#7e8a9e" />
 </LinearLayout>
