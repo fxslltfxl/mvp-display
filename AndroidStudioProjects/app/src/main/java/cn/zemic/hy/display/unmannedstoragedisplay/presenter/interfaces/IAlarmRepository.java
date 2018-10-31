@@ -1,5 +1,7 @@
 package cn.zemic.hy.display.unmannedstoragedisplay.presenter.interfaces;
 
+import microsoft.aspnet.signalr.client.hubs.HubProxy;
+
 /**
  * @author fxs
  */
@@ -16,4 +18,6 @@ public interface IAlarmRepository extends IBaseRepository {
      * @param onGetWarningDataFinish get data finish callback
      */
     void connectServiceForGetWarningAndUserInfo(String deviceId,String wareHouseNo, IBaseRepository.OnGetWarningDataFinish onGetWarningDataFinish);
+
+    HubProxy getHubProxy();
 }

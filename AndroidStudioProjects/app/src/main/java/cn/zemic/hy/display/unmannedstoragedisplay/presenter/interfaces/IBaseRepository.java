@@ -4,6 +4,7 @@ import java.util.List;
 
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserInViewModel;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserOutVM;
 
 /**
  * @author fxs
@@ -27,11 +28,11 @@ public interface IBaseRepository {
         void onSuccess(List<OperateWarningInformViewModel> alarmInfoBeans, boolean isFirst);
 
         /**
-         * fail call back
+         * show message call back
          *
-         * @param error message
+         * @param message message
          */
-        void onFail(String error);
+        void onShow(String message);
 
         /**
          * when user switchover(用户切换时)
@@ -40,5 +41,12 @@ public interface IBaseRepository {
          * @param warehouseNo 仓库号
          */
         void onUserChange(UserInViewModel user, String warehouseNo,boolean isOpenDoor);
+
+        void onUserOut(String wareHouse, UserOutVM user);
+
+        void onRunningCheck(String wareHouse, boolean isCheck);
+        void onRunningMaintain(String wareHouse, boolean isMaintain);
+
+        void onFetchTemperatureAndHumidityFinish(String wareHouseNo,float temperature, float humidity);
     }
 }

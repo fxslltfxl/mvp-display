@@ -3,6 +3,9 @@ package cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * @author fxs
+ */
 public class OperateWarningInformViewModel implements Parcelable {
     /**
      * 员工编号
@@ -31,6 +34,7 @@ public class OperateWarningInformViewModel implements Parcelable {
     public String WareHouseNo;
     public String ShelfNo;
     public String UnitNo;
+
 
     public String getUserNo() {
         return UserNo == null ? "" : UserNo;

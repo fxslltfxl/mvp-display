@@ -24,7 +24,7 @@ public class BaseViewHolder<T extends ViewDataBinding> extends RecyclerView.View
         this.mViewDataBinding = DataBindingUtil.bind(itemView);
     }
 
-    public T getBinding() {
+    public final T getBinding() {
         return mViewDataBinding;
     }
 }

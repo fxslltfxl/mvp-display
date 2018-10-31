@@ -25,6 +25,7 @@ import cn.zemic.hy.display.unmannedstoragedisplay.adapter.BaseRecycleViewAdapter
 import cn.zemic.hy.display.unmannedstoragedisplay.databinding.ActivityMainBinding;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserInViewModel;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserOutVM;
 import cn.zemic.hy.display.unmannedstoragedisplay.presenter.imp.alarm.AlarmPresenter;
 import cn.zemic.hy.display.unmannedstoragedisplay.presenter.imp.alarm.AlarmRepository;
 import cn.zemic.hy.display.unmannedstoragedisplay.presenter.interfaces.IAlarmPresenter;
@@ -40,7 +41,7 @@ import cn.zemic.hy.display.unmannedstoragedisplay.view.widget.CustomToast;
  */
 public class AlarmMainActivity extends BaseActivity implements IAlarmView, BaseRecycleViewAdapter.OnRecycleViewItemClickListener {
 
-
+    private static final int MARQUEE_DISMISS = 100;
     private BaseRecycleViewAdapter adapter;
     private ActivityMainBinding binding;
     private IAlarmPresenter mAlarmPresenter;
@@ -189,12 +190,79 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, BaseR
                 Thread.sleep(4300);
                 Message message = Message.obtain();
                 message.obj = AlarmMainActivity.this;
-                message.what = 100;
+                message.what = MARQUEE_DISMISS;
                 stopAnimateHandler.sendMessage(message);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
+    }
+
+    @Override
+    public void showUserOut(String wareHouse, UserOutVM user) {
+        dataForWave.clear();
+        binding.mvGreetUser.stopFlipping();
+        SimpleMF<String> marqueeFactory = new SimpleMF<>(this);
+        dataForWave.add(String.format("%s,离开%s仓库,订单编号：%s，订单状态为：%s", user.getUserName(), wareHouse,user.getApplyNo(),user.getStatus()));
+        marqueeFactory.setData(dataForWave);
+
+        binding.mvGreetUser.setMarqueeFactory(marqueeFactory);
+        binding.mvGreetUser.startFlipping();
+
+        // 清空，只显示一次
+        ThreadPoolExecutorUtils.getInstance().execute(() -> {
+            try {
+                Thread.sleep(4300);
+                Message message = Message.obtain();
+                message.obj = AlarmMainActivity.this;
+                message.what = MARQUEE_DISMISS;
+                stopAnimateHandler.sendMessage(message);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    @Override
+    public void hideWarningList(String wareHouse, boolean isCheck) {
+        if (isCheck){
+            binding.tvCheck.setText("仓  库  盘  点  中");
+            binding.tvCheck.setVisibility(View.VISIBLE);
+            binding.rvWarning.setVisibility(View.GONE);
+            binding.llFormTitle.setVisibility(View.GONE);
+        }else {
+            binding.tvCheck.setVisibility(View.GONE);
+            binding.rvWarning.setVisibility(View.VISIBLE);
+            binding.llFormTitle.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void showMaintainInfo(String wareHouse, boolean isMaintain) {
+        if (isMaintain){
+            binding.tvCheck.setText("仓   库   维   修   中");
+            binding.tvCheck.setVisibility(View.VISIBLE);
+            binding.rvWarning.setVisibility(View.GONE);
+            binding.llFormTitle.setVisibility(View.GONE);
+        }else {
+            binding.tvCheck.setVisibility(View.GONE);
+            binding.rvWarning.setVisibility(View.VISIBLE);
+            binding.llFormTitle.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void showTemperatureAndHumidity(String wareHouseNo, float temperature, float humidity) {
+        String temp = String.valueOf(temperature);
+        if (temp.length()>5){
+            temp = temp.substring(0,5);
+        }
+        String hum = String.valueOf(humidity);
+        if (hum.length()>5){
+            hum = hum.substring(0,5);
+        }
+        binding.tvTemperatureHumidity.setText(String.format(Locale.CHINA,"温度：%s ℃     湿度：%s %%RH",temp,hum));
+
     }
 
     @Override
@@ -264,7 +332,7 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, BaseR
             }
             super.handleMessage(msg);
             switch (msg.what) {
-                case 100:
+                case MARQUEE_DISMISS:
                     final List<String> data = new ArrayList<>();
                     SimpleMF<String> marqueeFactory = new SimpleMF<>(context);
                     marqueeFactory.setData(data);

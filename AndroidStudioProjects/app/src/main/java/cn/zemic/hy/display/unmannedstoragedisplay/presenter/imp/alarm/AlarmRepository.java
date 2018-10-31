@@ -8,12 +8,15 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import cn.zemic.hy.display.unmannedstoragedisplay.model.bean.FilterLedForMobileUiCommand;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.MachineBindDoorControlViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserInViewModel;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserOutVM;
+import cn.zemic.hy.display.unmannedstoragedisplay.network.URLFactory;
 import cn.zemic.hy.display.unmannedstoragedisplay.network.service.FetchDataService;
 import cn.zemic.hy.display.unmannedstoragedisplay.presenter.interfaces.IAlarmRepository;
 import cn.zemic.hy.display.unmannedstoragedisplay.presenter.interfaces.IBaseRepository;
@@ -35,9 +38,14 @@ public class AlarmRepository implements IAlarmRepository {
     private static final int DATA_CHANGED = 1;
     private static final int USER_CHANGED = 2;
     private static final int DATA_SEND_MSG = 3;
+    private static final int USER_OUT = 4;
+    private static final int CHECK = 5;
+    private static final int MAINTAIN = 6;
+    private static final int TEMPERATURE_HUMIDITY = 7;
     private static IBaseRepository.OnGetWarningDataFinish mOnGetWarningDataFinish;
     private static String mConnectionId;
     private MyMessagesHandler mHandler;
+    private HubProxy mHubProxy;
 
     @Override
     public void getWareHouseNo(String deviceId, OnGetWareHouseNoFinish onGetWareHouseNoFinish) {
@@ -45,6 +53,10 @@ public class AlarmRepository implements IAlarmRepository {
         FetchDataService.getWareHouseNoService(filter).enqueue(new Callback<String>() {
             @Override
             public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+                if(!response.isSuccessful()){
+                    onGetWareHouseNoFinish.onFail(String.format(Locale.CHINA,"获取仓库号响应异常，错误码：%d",response.code()));
+                    return;
+                }
                 String wareHouseNo = response.body();
                 onGetWareHouseNoFinish.onSuccess(wareHouseNo);
             }
@@ -61,7 +73,8 @@ public class AlarmRepository implements IAlarmRepository {
         mOnGetWarningDataFinish = onGetWarningDataFinish;
         mHandler = new MyMessagesHandler();
         Platform.loadPlatformComponent(new AndroidPlatformComponent());
-        String serverURI = "http://api.zemic.cn/signalr";
+        String serverURI = String.format(Locale.CHINA,"%ssignalr", URLFactory.serverURI);
+//        String serverURI = "http://192.168.0.2:25535/signalr";
         HubConnection connection = new HubConnection(serverURI) {
             @Override
             protected void onConnected() {
@@ -83,13 +96,17 @@ public class AlarmRepository implements IAlarmRepository {
             }
         };
         //hub agency
-        HubProxy hubProxy = connection.createHubProxy("electronicSignsHub");
+        mHubProxy = connection.createHubProxy("electronicSignsHub");
         //hubProxy.on可以理解为讯息or事件监听器
-        hubProxy.on("sendUserIn", this::runWithUserInfo, String.class, Boolean.class, UserInViewModel.class, MachineBindDoorControlViewModel.class);
+        mHubProxy.on("sendUserIn", this::runWithUserInfo, String.class, Boolean.class, UserInViewModel.class, MachineBindDoorControlViewModel.class);
+        mHubProxy.on("sendCheck", this::runWithIsCheck, String.class, Boolean.class);
+        mHubProxy.on("sendMaintain", this::runWithMaintain, String.class, Boolean.class);
+        mHubProxy.on("sendTemAndHum", this::runWithTemperature, String.class, Float.class,Float.class);
+        mHubProxy.on("sendUserLeave", this::runWithUserOut, String.class, UserOutVM.class);
         //接收告警信息
-        hubProxy.on("sendWarnInform", this::runWithWarnInfo, String.class, OperateWarningInformViewModel.class);
+        mHubProxy.on("sendWarnInform", this::runWithWarnInfo, String.class, OperateWarningInformViewModel.class);
         //接受日志信息
-        hubProxy.on("sendConnectMessage", this::runWithConnectMsg, String.class, String.class, Boolean.class);
+        mHubProxy.on("sendConnectMessage", this::runWithConnectMsg, String.class, String.class, Boolean.class);
         final SignalRFuture<Void> con = connection.start(new ServerSentEventsTransport(connection.getLogger()));
         try {
             con.get();
@@ -99,8 +116,16 @@ public class AlarmRepository implements IAlarmRepository {
         con.onError(this::onError);
         if (con.isDone()) {
             //调用服务器连接方法
-            hubProxy.invoke("Connect", wareHouseNo, deviceId);
+            mHubProxy.invoke("Connect", wareHouseNo, deviceId);
         }
+    }
+
+    @Override
+    public HubProxy getHubProxy() {
+        if (null == mHubProxy) {
+            throw new NullPointerException("mHubProxy is null");
+        }
+        return mHubProxy;
     }
 
     private void runWithUserInfo(String warehouseNo, Boolean isOpenDoor, UserInViewModel userIn, MachineBindDoorControlViewModel doorControl) {
@@ -111,6 +136,48 @@ public class AlarmRepository implements IAlarmRepository {
         bundle.putString("warehouseNo", warehouseNo);
         bundle.putParcelable("userIn", userIn);
         bundle.putParcelable("doorControl", doorControl);
+        message.setData(bundle);
+        mHandler.sendMessage(message);
+    }
+
+
+    private void runWithUserOut(String warehouseNo, UserOutVM user) {
+        Message message = Message.obtain();
+        message.what = USER_OUT;
+        Bundle bundle = new Bundle();
+        bundle.putString("warehouseNo", warehouseNo);
+        bundle.putParcelable("userOut", user);
+        message.setData(bundle);
+        mHandler.sendMessage(message);
+    }
+
+    private void runWithIsCheck(String warehouseNo, Boolean isCheck) {
+        Message message = Message.obtain();
+        message.what = CHECK;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("isCheck", isCheck);
+        bundle.putString("warehouseNo", warehouseNo);
+        message.setData(bundle);
+        mHandler.sendMessage(message);
+    }
+
+    private void runWithMaintain(String warehouseNo, Boolean isMaintain) {
+        Message message = Message.obtain();
+        message.what = MAINTAIN;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("isMaintain", isMaintain);
+        bundle.putString("warehouseNo", warehouseNo);
+        message.setData(bundle);
+        mHandler.sendMessage(message);
+    }
+
+    private void runWithTemperature(String wareHouseNo,float temperature, float humidity) {
+        Message message = Message.obtain();
+        message.what = TEMPERATURE_HUMIDITY;
+        Bundle bundle = new Bundle();
+        bundle.putString("wareHouseNo",wareHouseNo);
+        bundle.putFloat("temperature", temperature);
+        bundle.putFloat("humidity", humidity);
         message.setData(bundle);
         mHandler.sendMessage(message);
     }
@@ -157,22 +224,42 @@ public class AlarmRepository implements IAlarmRepository {
             }
             super.handleMessage(msg);
             switch (msg.what) {
+                case TEMPERATURE_HUMIDITY:
+                    Bundle bundletempAndHum = msg.getData();
+                    float temperature = bundletempAndHum.getFloat("temperature");
+                    float humidity = bundletempAndHum.getFloat("humidity");
+                    String wareHouseForTemp = bundletempAndHum.getString("wareHouseNo");
+                    mOnGetWarningDataFinish.onFetchTemperatureAndHumidityFinish(wareHouseForTemp,temperature,humidity);
+                    break;
+                case MAINTAIN:
+                    Bundle bundleMaintain = msg.getData();
+                    String warehouseNoForMaintain = bundleMaintain.getString("warehouseNo");
+                    Boolean isMaintain = bundleMaintain.getBoolean("isMaintain");
+                    mOnGetWarningDataFinish.onRunningMaintain(warehouseNoForMaintain,isMaintain);
+                    break;
+                case CHECK:
+                    Bundle bundleCheck = msg.getData();
+                    String warehouseNo = bundleCheck.getString("warehouseNo");
+                    Boolean isCheck = bundleCheck.getBoolean("isCheck");
+                    mOnGetWarningDataFinish.onRunningCheck(warehouseNo,isCheck);
+                    break;
+
                 case DATA_SEND_MSG:
                     Bundle bundleMsg = msg.getData();
                     String connectionId = bundleMsg.getString("connectionId");
                     Boolean isConnect = bundleMsg.getBoolean("isConnect");
                     Log.e("DATA_SEND_MSG", msg.obj.toString() + connectionId);
                     if (isConnect) {
-                        mOnGetWarningDataFinish.onFail(msg.obj.toString());
+                        mOnGetWarningDataFinish.onShow(msg.obj.toString());
                     } else {
                         if (mConnectionId.equals(connectionId)) {
-                            mOnGetWarningDataFinish.onFail(msg.obj.toString());
+                            mOnGetWarningDataFinish.onShow(msg.obj.toString());
                         }
                     }
                     break;
                 case DATA_ERROR:
                     Log.e("DATA_ERROR", msg.obj.toString());
-                    mOnGetWarningDataFinish.onFail(msg.obj.toString());
+                    mOnGetWarningDataFinish.onShow(msg.obj.toString());
                     break;
                 case DATA_CHANGED:
                     Bundle bundle = msg.getData();
@@ -201,6 +288,15 @@ public class AlarmRepository implements IAlarmRepository {
                     UserInViewModel userIn = userBundle.getParcelable("userIn");
                     String userWarehouseNo = userBundle.getString("warehouseNo");
                     mOnGetWarningDataFinish.onUserChange(userIn, userWarehouseNo, isOpenDoor);
+                    break;
+                case USER_OUT:
+                    Bundle userOutBundle = msg.getData();
+                    UserOutVM userOut = userOutBundle.getParcelable("userOut");
+                    String userOutWarehouseNo = userOutBundle.getString("warehouseNo");
+                    if (null==userOut){
+                        break;
+                    }
+                    mOnGetWarningDataFinish.onUserOut(userOutWarehouseNo,userOut);
                     break;
                 default:
                     break;

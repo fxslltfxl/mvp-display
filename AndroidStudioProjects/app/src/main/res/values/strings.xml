@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">UnmannedStorageDisplay</string>
-    <string name="user_no">用户编号</string>
+    <string name="warehouse_no">仓库编号</string>
     <string name="user_name">用户名称</string>
     <string name="unit_no">用户名称</string>
     <string name="warning">告警类型</string>
     <string name="material_no">物料编号</string>
     <string name="material_name">物料名称</string>
     <string name="warning_content">告警内容</string>
-    <string name="welcome">欢迎使用智能仓储系统</string>
+    <string name="welcome">欢迎使用无人仓储系统</string>
     <string name="welcome_splash">欢迎使用</string>
 
 </resources>

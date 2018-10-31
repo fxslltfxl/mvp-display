@@ -13,6 +13,7 @@ public class DateUtils {
      * @return 系统时间
      */
     public static String getSysDate(){
+
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日", Locale.CHINA);
         return sdf.format(date);
