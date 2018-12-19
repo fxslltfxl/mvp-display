@@ -14,7 +14,8 @@ public class AlarmInfoBean {
      * WarnContent : sample string 6
      * WareHouseNo : sample string 7
      * ShelfNo : sample string 8
-     * UnitNo : sample string 9
+     * UnitNo : sample stri
+     * 0000000000ng 9
      */
 
     private String UserNo;
