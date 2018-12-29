@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: signalr-client-sdk-android-debug:@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/signalr-client-sdk-android-debug.aar/fe879d9274636e9d614d63e4035834d0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/signalr-client-sdk-android-debug.aar/fe879d9274636e9d614d63e4035834d0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

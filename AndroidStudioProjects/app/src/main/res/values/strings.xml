@@ -10,4 +10,11 @@
     <string name="welcome">欢迎使用无人仓储系统</string>
     <string name="welcome_splash">欢迎使用</string>
 
+    <string name="welcome_new">欢迎使用无人值守仓储管理系统</string>
+    <string name="user_name_new">姓名</string>
+    <string name="user_no">工号</string>
+    <string name="order_no">订单号</string>
+    <string name="warn">告警</string>
+    <string name="unconnect">失联</string>
+    <string name="normal">正常</string>
 </resources>

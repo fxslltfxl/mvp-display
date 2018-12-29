@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/end_blue"
+    tools:context=".view.activity.alarmactivity.AlarmMainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/hor_guideline_15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/out_hor_guideline_90"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/ver_guideline_05"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/ver_guideline_33"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/out_hor_guideline_63"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
+
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginStart="@dimen/height_50"
+        android:layout_marginLeft="@dimen/height_50"
+        android:layout_marginTop="20dp"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:text="@string/welcome_new"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_55"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_temperature_humidity"
+        android:layout_width="716dp"
+        android:layout_height="@dimen/zero"
+        android:layout_marginTop="20dp"
+        android:gravity="bottom|start"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_28"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+        app:layout_constraintEnd_toEndOf="@id/ver_guideline_33"
+        app:layout_constraintStart_toStartOf="@id/ver_guideline_05"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_year_month"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginTop="20dp"
+        android:gravity="bottom|end"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_25"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+        app:layout_constraintEnd_toEndOf="@id/ver_guideline_80"
+        app:layout_constraintStart_toStartOf="@id/ver_guideline_67"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginTop="20dp"
+        android:gravity="center|bottom"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_30"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+        app:layout_constraintEnd_toEndOf="@id/ver_guideline_95"
+        app:layout_constraintStart_toEndOf="@id/ver_guideline_80"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_week"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginTop="20dp"
+        android:gravity="bottom|start"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_30"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ver_guideline_95"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="@dimen/zero"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/out_hor_guideline_90"
+        app:layout_constraintRight_toLeftOf="@+id/ll_form_title"
+        app:layout_constraintTop_toBottomOf="@+id/main_title" />
+
+
+    <View
+        android:layout_width="@dimen/zero"
+        android:layout_height="2dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_form_title"
+        app:layout_constraintRight_toRightOf="@+id/ll_form_title"
+        app:layout_constraintTop_toBottomOf="@+id/main_title" />
+
+    <View
+        android:id="@+id/table_title_bottom"
+        android:layout_width="@dimen/zero"
+        android:layout_height="2dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_form_title"
+        app:layout_constraintRight_toRightOf="@+id/ll_form_title"
+        app:layout_constraintTop_toBottomOf="@+id/ll_form_title" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="@dimen/zero"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/out_hor_guideline_90"
+        app:layout_constraintLeft_toRightOf="@+id/ll_form_title"
+        app:layout_constraintTop_toBottomOf="@id/main_title" />
+
+    <View
+        android:layout_width="@dimen/zero"
+        android:layout_height="2dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_form_title"
+        app:layout_constraintRight_toRightOf="@+id/ll_form_title"
+        app:layout_constraintTop_toBottomOf="@+id/out_hor_guideline_90" />
+
+    <LinearLayout
+        android:id="@+id/ll_form_title"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/height_warning_item"
+        android:layout_marginStart="@dimen/height_50"
+        android:layout_marginLeft="@dimen/height_50"
+        android:layout_marginEnd="@dimen/height_50"
+        android:layout_marginRight="@dimen/height_50"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_title"
+        app:layout_constraintWidth_percent="0.3">
+
+        <TextView
+            android:id="@+id/user_no"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/height_warning_item"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_name_new"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_35" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="@dimen/height_warning_item"
+            android:background="@color/white"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/warn_type"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/height_warning_item"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/user_no"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_35" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="@dimen/height_warning_item"
+            android:background="@color/white"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/material_no"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/height_warning_item"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="@string/order_no"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_35" />
+
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_warning"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_form_title"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_recycleview_alarm" />
+
+    <com.gongwen.marqueen.SimpleMarqueeView
+        android:id="@+id/mv_greet_user"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:animateFirstView="true"
+        android:flipInterval="7000"
+        android:inAnimation="@anim/in_right"
+        android:outAnimation="@anim/in_left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/out_hor_guideline_90"
+        app:marqueeAnimDuration="4000"
+        app:smvTextColor="@color/black"
+        app:smvTextEllipsize="middle"
+        app:smvTextGravity="left"
+        app:smvTextSize="45sp">
+
+    </com.gongwen.marqueen.SimpleMarqueeView>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginStart="@dimen/height_50"
+        android:layout_marginLeft="@dimen/height_50"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/out_hor_guideline_90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_title_bottom"
+        app:layout_constraintWidth_percent="0.3"
+        tools:itemCount="10"
+        tools:listitem="@layout/order_cell" />
+
+
+    <!--<android.support.constraint.ConstraintLayout-->
+    <!--android:id="@+id/cl_table"-->
+    <!--android:layout_width="@dimen/zero"-->
+    <!--android:layout_height="@dimen/zero"-->
+    <!--android:layout_marginStart="50dp"-->
+    <!--android:layout_marginEnd="50dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintHorizontal_bias="0"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/ll_form_title"-->
+    <!--app:layout_constraintWidth_percent="0.3">-->
+
+
+    <!--<View-->
+    <!--android:layout_width="2dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/white"-->
+    <!--android:orientation="vertical"-->
+    <!--app:layout_constraintRight_toLeftOf="@+id/ver_guideline_05"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_10" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_20"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.20" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_10"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.10" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_30"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.30" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_50"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.50" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_70"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.70" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_90"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.90" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_40"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.40" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_60"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.60" />-->
+
+    <!--<android.support.constraint.Guideline-->
+    <!--android:id="@+id/hor_guideline_80"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintGuide_percent="0.80" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/zero"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_20"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_10" />-->
+
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/zero"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_40"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_30" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/zero"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_60"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_50" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/zero"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="@+id/hor_guideline_80"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_70" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/zero"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_90" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/two"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_20" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/two"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_40" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/two"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_60" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/two"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintTop_toTopOf="@id/hor_guideline_80" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/two"-->
+    <!--android:background="@color/toast_color"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent" />-->
+
+
+    <!--</android.support.constraint.ConstraintLayout>-->
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycler_view"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginRight="@dimen/height_50"
+        app:layout_constraintBottom_toBottomOf="@+id/out_hor_guideline_63"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_title"
+        app:layout_constraintWidth_percent="0.65"
+        tools:itemCount="2"
+        tools:listitem="@layout/shelf_cell" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginStart="@dimen/height_50"
+        android:layout_marginEnd="@dimen/height_50"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/out_hor_guideline_90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/out_hor_guideline_63"
+        app:layout_constraintWidth_percent="0.65">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_hor_guideline_23"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.23" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_hor_guideline_48"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.48" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_hor_guideline_73"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_hor_guideline_94"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.94" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_ver_guideline_10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_ver_guideline_12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_ver_guideline_40"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.43" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_ver_guideline_42"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_ver_guideline_70"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.78" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bcf_ver_guideline_72"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.80" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_23"
+            app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_10"
+            app:srcCompat="@drawable/base_station" />
+
+        <TextView
+            android:id="@+id/base_station_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:text="基站1"
+            android:textSize="@dimen/text_size_50"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_23"
+            app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_12" />
+
+        <ImageView
+            android:id="@+id/base_station_first_status"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_23"
+            app:layout_constraintLeft_toRightOf="@+id/base_station_first"
+            app:srcCompat="@drawable/correct" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_10"
+            app:srcCompat="@drawable/base_station" />
+
+        <TextView
+            android:id="@+id/base_station_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:text="基站2"
+            android:textSize="50dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_12" />
+
+        <ImageView
+            android:id="@+id/base_station_second_status"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintLeft_toRightOf="@+id/base_station_second"
+            app:srcCompat="@drawable/correct" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_73"
+            app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_10"
+            app:srcCompat="@drawable/base_station" />
+
+        <TextView
+            android:id="@+id/base_station_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:text="基站3"
+            android:textSize="@dimen/text_size_50"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_73"
+            app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_12" />
+
+        <ImageView
+            android:id="@+id/base_station_third_status"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_73"
+            app:layout_constraintLeft_toRightOf="@+id/base_station_third"
+            app:srcCompat="@drawable/correct" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_94"
+            app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_10"
+            app:srcCompat="@drawable/base_station" />
+
+        <TextView
+            android:id="@+id/base_station_fourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:text="基站4"
+            android:textSize="@dimen/text_size_50"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_94"
+            app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_12" />
+
+        <ImageView
+            android:id="@+id/base_station_fourth_status"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_94"
+            app:layout_constraintLeft_toRightOf="@+id/base_station_fourth"
+            app:srcCompat="@drawable/correct" />
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_40"
+            app:srcCompat="@drawable/camera" />
+
+        <TextView
+            android:id="@+id/camera_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:text="摄像头1"
+            android:textSize="@dimen/text_size_50"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_42" />
+
+        <ImageView
+            android:id="@+id/camer_first_status"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintLeft_toRightOf="@+id/camera_first"
+            app:srcCompat="@drawable/correct" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_73"
+            app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_40"
+            app:srcCompat="@drawable/camera" />
+
+        <TextView
+            android:id="@+id/camera_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:text="摄像头2"
+            android:textSize="@dimen/text_size_50"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_73"
+            app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_42" />
+
+        <ImageView
+            android:id="@+id/camer_second_status"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_73"
+            app:layout_constraintLeft_toRightOf="@+id/camera_second"
+            app:srcCompat="@drawable/correct" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_70"
+            app:srcCompat="@drawable/fingerprint" />
+
+        <TextView
+            android:id="@+id/fingerprint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:text="指纹仪"
+            android:textSize="@dimen/text_size_50"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_72" />
+
+        <ImageView
+            android:id="@+id/fingerprint_status"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_48"
+            app:layout_constraintLeft_toRightOf="@+id/fingerprint"
+            app:srcCompat="@drawable/correct" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_check"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_180"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_form_title" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/av_loading_view"
+        style="@style/AVLoadingIndicatorView.Large"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:visibility="visible"
+        app:indicatorColor="@color/btn_blue_bg"
+        app:indicatorName="BallTrianglePathIndicator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<TextClock-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:format24Hour="yyyy年MM月dd日,hh:mm:ss EEEE"-->
+    <!--/>-->
+
+</android.support.constraint.ConstraintLayout>
+
