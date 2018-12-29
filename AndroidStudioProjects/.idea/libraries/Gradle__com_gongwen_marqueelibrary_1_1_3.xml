@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.gongwen:marqueelibrary-1.1.3">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/marqueelibrary-1.1.3.aar/7de5cced58307eb86bd54f07b3014d0a/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/marqueelibrary-1.1.3.aar/7de5cced58307eb86bd54f07b3014d0a/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/marqueelibrary-1.1.3.aar/8e9e755813b8bad3c77f848fa3f8b52f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/marqueelibrary-1.1.3.aar/8e9e755813b8bad3c77f848fa3f8b52f/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
