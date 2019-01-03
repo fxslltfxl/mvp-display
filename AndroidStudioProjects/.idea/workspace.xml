@@ -18,71 +18,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78c3865b-85a5-4acf-bc9b-eac118c5f649" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/ShelfRecycleViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/WarnRecycleViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserDisplayVM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/EntranceGuardState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfLedState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars___D__StorageScreen_mvp_display_AndroidStudioProjects_app_libs_signalr_client_sdk_jar_unspecified_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_adapters_3_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_adapters_3_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_library_3_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_databinding_library_3_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gongwen_marqueelibrary_1_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_gongwen_marqueelibrary_1_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_24_1_android_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_j2objc_j2objc_annotations_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_j2objc_j2objc_annotations_1_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_wang_avi_library_2_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_wang_avi_library_2_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_java_websocket_Java_WebSocket_1_3_8_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__signalr_client_sdk_android_debug__aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__signalr_client_sdk_android_debug__aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/BaseRecycleViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/BaseRecycleViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/ShelfRecycleViewAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/ShelfRecycleViewAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfState.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserInViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserInViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/interfaces/IBaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/interfaces/IBaseRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/base_station.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/base_station.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/camera.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/camera.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/correct.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/correct.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/correct_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/correct_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/error.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/error_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/error_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/fingerprint.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fingerprint.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/warn.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/warn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/warn_normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/warn_normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/order_cell.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/order_cell.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/shelf_cell.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/shelf_cell.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/IAlarmView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/IAlarmView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,39 +57,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="IAlarmView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/IAlarmView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-623">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlarmMainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AlarmMainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="106" column="43" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
+            <state relative-caret-position="265">
+              <caret line="95" column="65" lean-forward="true" selection-start-line="95" selection-start-column="65" selection-end-line="95" selection-end-column="65" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2638#2639#0" expanded="true" />
-                <element signature="e#2669#2670#0" expanded="true" />
-                <element signature="e#2711#2712#0" expanded="true" />
-                <element signature="e#2741#2742#0" expanded="true" />
+                <element signature="e#5224#5225#0" expanded="true" />
+                <element signature="e#5273#5274#0" expanded="true" />
+                <element signature="e#6202#6203#0" expanded="true" />
+                <element signature="e#6254#6255#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main_new.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_new.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="UserInViewModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserInViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="282" column="40" selection-start-line="282" selection-start-column="40" selection-end-line="282" selection-end-column="40" />
+            <state relative-caret-position="120">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#431#432#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#557#558#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#695#696#0" expanded="true" />
+                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#817#818#0" expanded="true" />
+                <element signature="e#863#864#0" expanded="true" />
+                <element signature="e#896#897#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#997#998#0" expanded="true" />
+                <element signature="e#1671#1672#0" expanded="true" />
+                <element signature="e#1727#1728#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShelfLedState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfLedState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShelfRecycleViewAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/ShelfRecycleViewAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-622">
+              <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+              <folding>
+                <element signature="e#3592#3619#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,88 +130,20 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1317">
+            <state relative-caret-position="525">
               <caret line="127" column="8" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
-              <folding>
-                <element signature="e#3781#3795#0" expanded="true" />
-                <element signature="e#4652#4671#0" expanded="true" />
-                <element signature="e#5525#5541#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDisplayVM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserDisplayVM.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShelfState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#180#181#0" expanded="true" />
-                <element signature="e#233#234#0" expanded="true" />
-                <element signature="e#279#280#0" expanded="true" />
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#178#179#0" expanded="true" />
-                <element signature="e#207#208#0" expanded="true" />
-                <element signature="e#235#236#0" expanded="true" />
-                <element signature="e#274#275#0" expanded="true" />
-                <element signature="e#308#309#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShelfRecycleViewAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/ShelfRecycleViewAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-              <folding>
-                <element signature="e#3080#3081#0" expanded="true" />
-                <element signature="e#3135#3136#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseRecycleViewAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/BaseRecycleViewAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WarnRecycleViewAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/WarnRecycleViewAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseViewHolder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/BaseViewHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -2706,10 +2620,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/WarnRecycleViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/UserRecycleViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/BaseRecycleViewAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/shelf_cell.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/AllConnectShelfShow.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfState.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/EntranceGuardState.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/interfaces/IBaseRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/IAlarmView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfLedState.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/ShelfRecycleViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserInViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.java" />
       </list>
     </option>
   </component>
@@ -2802,9 +2724,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2860,18 +2781,102 @@
             <path>
               <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="cn" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="zemic" type="462c0819:PsiDirectoryNode" />
+              <item name="hy" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
+              <item name="unmannedstoragedisplay" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="cn" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="zemic" type="462c0819:PsiDirectoryNode" />
+              <item name="hy" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
+              <item name="unmannedstoragedisplay" type="462c0819:PsiDirectoryNode" />
+              <item name="presenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="cn" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="zemic" type="462c0819:PsiDirectoryNode" />
+              <item name="hy" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
+              <item name="unmannedstoragedisplay" type="462c0819:PsiDirectoryNode" />
+              <item name="presenter" type="462c0819:PsiDirectoryNode" />
+              <item name="imp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="cn" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="zemic" type="462c0819:PsiDirectoryNode" />
+              <item name="hy" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
+              <item name="unmannedstoragedisplay" type="462c0819:PsiDirectoryNode" />
+              <item name="presenter" type="462c0819:PsiDirectoryNode" />
+              <item name="imp" type="462c0819:PsiDirectoryNode" />
+              <item name="alarm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="cn" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="zemic" type="462c0819:PsiDirectoryNode" />
+              <item name="hy" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
+              <item name="unmannedstoragedisplay" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="cn" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="zemic" type="462c0819:PsiDirectoryNode" />
+              <item name="hy" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
+              <item name="unmannedstoragedisplay" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="cn" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="zemic" type="462c0819:PsiDirectoryNode" />
+              <item name="hy" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
+              <item name="unmannedstoragedisplay" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="activity" type="462c0819:PsiDirectoryNode" />
+              <item name="alarmactivity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
               <item name="AndroidStudioProjects" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3066,6 +3071,14 @@
       <option name="presentableId" value="Default" />
       <updated>1546060373628</updated>
     </task>
+    <task id="LOCAL-00001" summary="new requirement done">
+      <created>1546067904421</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1546067904421</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3082,11 +3095,10 @@
       <window_info id="Designer" order="2" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32943678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" weight="0.32976446" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -3096,16 +3108,17 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Captures" order="2" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22055675" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25963598" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Flutter Inspector" order="3" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
@@ -3113,19 +3126,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new requirement done" />
+    <option name="LAST_COMMIT_MESSAGE" value="new requirement done" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2112">
-          <caret line="113" column="58" lean-forward="true" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3159,10 +3170,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding>
-            <element signature="e#3080#3081#0" expanded="true" />
-            <element signature="e#3135#3136#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3210,13 +3217,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/com/android/databinding/library/baseAdapters/BR.java" />
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/apt/debug/cn/zemic/hy/display/unmannedstoragedisplay/BR.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="21" column="75" lean-forward="true" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/order_cell.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3263,27 +3264,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/correct_normal.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/camera.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/error.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/error_normal.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/fingerprint.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -3293,37 +3274,15 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/warn.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/warn_normal.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/base_station.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/correct.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/BaseRecycleViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
+        <state relative-caret-position="456">
           <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/IAlarmView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-623">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -3341,57 +3300,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserDisplayVM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="106" column="43" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2638#2639#0" expanded="true" />
-            <element signature="e#2669#2670#0" expanded="true" />
-            <element signature="e#2711#2712#0" expanded="true" />
-            <element signature="e#2741#2742#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/MachineBindDoorControlViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/DoorControlViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/AllConnectShelfShow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/OperateWarningInformViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="1104">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
           <folding>
-            <element signature="e#180#181#0" expanded="true" />
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#207#208#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#308#309#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1464#1465#0" expanded="true" />
+            <element signature="e#1515#1516#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserDisplayVM.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/IAlarmView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="673">
+          <caret line="104" column="51" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/shelf_cell.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/interfaces/IBaseRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1317">
-          <caret line="127" column="8" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+        <state relative-caret-position="673">
+          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="338" column="56" lean-forward="true" selection-start-line="338" selection-start-column="56" selection-end-line="338" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/presenter/imp/alarm/AlarmPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/EntranceGuardState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="e#3781#3795#0" expanded="true" />
-            <element signature="e#4652#4671#0" expanded="true" />
-            <element signature="e#5525#5541#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3401,18 +3402,137 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="282" column="40" selection-start-line="282" selection-start-column="40" selection-end-line="282" selection-end-column="40" />
+        <state relative-caret-position="285">
+          <caret line="546" column="12" selection-start-line="546" selection-start-column="12" selection-end-line="546" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/custom_toast.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/fingerprint.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/item_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/warn_normal.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/error_normal.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/warn.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/correct.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/50c83613ea8d496e7adf0c4fa3d504d8/jars/classes.jar!/android/support/v7/widget/RecyclerView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="6076" column="26" selection-start-line="6076" selection-start-column="26" selection-end-line="6076" selection-end-column="26" />
+          <folding>
+            <element signature="e#239491#239492#0" expanded="true" />
+            <element signature="e#239547#239548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/correct_normal.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/error.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/shelf_cell.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="127" column="8" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/ShelfLedState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/adapter/ShelfRecycleViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+        <state relative-caret-position="-622">
+          <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
           <folding>
-            <element signature="e#3080#3081#0" expanded="true" />
-            <element signature="e#3135#3136#0" expanded="true" />
+            <element signature="e#3592#3619#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/model/viewmodel/UserInViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#695#696#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
+            <element signature="e#1671#1672#0" expanded="true" />
+            <element signature="e#1727#1728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/zemic/hy/display/unmannedstoragedisplay/view/activity/alarmactivity/AlarmMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="95" column="65" lean-forward="true" selection-start-line="95" selection-start-column="65" selection-end-line="95" selection-end-column="65" />
+          <folding>
+            <element signature="e#5224#5225#0" expanded="true" />
+            <element signature="e#5273#5274#0" expanded="true" />
+            <element signature="e#6202#6203#0" expanded="true" />
+            <element signature="e#6254#6255#0" expanded="true" />
           </folding>
         </state>
       </provider>

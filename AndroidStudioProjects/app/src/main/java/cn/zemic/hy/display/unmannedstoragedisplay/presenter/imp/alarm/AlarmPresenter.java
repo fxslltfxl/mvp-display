@@ -6,7 +6,9 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.EntranceGuardState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.ShelfState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserInViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserOutVM;
 import cn.zemic.hy.display.unmannedstoragedisplay.presenter.imp.BasePresenter;
@@ -89,6 +91,18 @@ public class AlarmPresenter extends BasePresenter implements IAlarmPresenter {
                     public void onFetchTemperatureAndHumidityFinish(String wareHouseNo, float temperature, float humidity) {
                         iAlarmView.hideLoading();
                         iAlarmView.showTemperatureAndHumidity(wareHouseNo,temperature,humidity);
+                    }
+
+                    @Override
+                    public void onReceiveDoorState(String warehouseNo, EntranceGuardState entranceGuardState) {
+                        iAlarmView.hideLoading();
+                        iAlarmView.showDoorState(warehouseNo,entranceGuardState);
+                    }
+
+                    @Override
+                    public void onReceiveShelfState(String shelfWarehouseNo, ShelfState shelfState) {
+                        iAlarmView.hideLoading();
+                        iAlarmView.showShelfState(shelfWarehouseNo,shelfState);
                     }
 
 
