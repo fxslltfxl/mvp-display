@@ -73,6 +73,7 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:text="货架"
+            android:textColor="@color/white"
             android:textSize="50sp"
             app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_20" />
 
@@ -92,6 +93,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:text="@string/warn"
+            android:textColor="@color/white"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_40"
             app:layout_constraintLeft_toRightOf="@+id/cell_ver_guideline_45" />
@@ -111,6 +113,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:text="@string/unconnect"
+            android:textColor="@color/white"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_60"
             app:layout_constraintLeft_toRightOf="@+id/cell_ver_guideline_45" />
@@ -131,6 +134,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             android:text="@string/normal"
+            android:textColor="@color/white"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_80"
             app:layout_constraintLeft_toRightOf="@+id/cell_ver_guideline_45" />

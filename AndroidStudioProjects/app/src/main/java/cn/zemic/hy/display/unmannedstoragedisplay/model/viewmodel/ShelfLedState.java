@@ -4,9 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ShelfLedState implements Parcelable {
-    public String ShelfNo;
+    private String ShelfNo;
 
-    public String ShelfState;
+    private String ShelfState;
 
     public String getShelfNo() {
         return ShelfNo == null ? "" : ShelfNo;

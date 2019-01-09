@@ -53,8 +53,8 @@ public class ShelfRecycleViewAdapter extends RecyclerView.Adapter<BaseViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder<ShelfCellBinding> holder, int position) {
-        holder.getBinding().shelfName.setText(String.format(Locale.CHINA, "货架%d", position + 1));
-        String shelfState = mList.get(position).ShelfState;
+        holder.getBinding().shelfName.setText(String.format(Locale.CHINA, "货架%s", mList.get(position).getShelfNo()));
+        String shelfState = mList.get(position).getShelfState();
 
         switch (shelfState) {
             case "0":

@@ -27,7 +27,7 @@
         app:layout_constraintGuide_percent="0.73"/>
 
     <android.support.constraint.Guideline
-        android:id="@+id/bcf_hor_guideline_94"
+        android:id="@+id/bcf_hor_guideline_96"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -164,7 +164,7 @@
         android:layout_height="60dp"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/base_station"
-        app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_94"
+        app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_96"
         app:layout_constraintRight_toLeftOf="@+id/bcf_ver_guideline_10"/>
 
     <TextView
@@ -174,7 +174,7 @@
         android:orientation="horizontal"
         android:text="基站1"
         android:textSize="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_94"
+        app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_96"
         app:layout_constraintLeft_toRightOf="@+id/bcf_ver_guideline_12"/>
 
     <ImageView
@@ -184,7 +184,7 @@
         android:scaleType="centerInside"
         android:layout_marginLeft="8dp"
         app:srcCompat="@drawable/correct"
-        app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_94"
+        app:layout_constraintBottom_toBottomOf="@+id/bcf_hor_guideline_96"
         app:layout_constraintLeft_toRightOf="@+id/base_station_fourth"/>
 
 

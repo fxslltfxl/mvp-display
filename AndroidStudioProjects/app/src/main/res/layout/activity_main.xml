@@ -14,18 +14,18 @@
         android:background="@color/end_blue">
 
         <android.support.constraint.Guideline
-            android:id="@+id/hor_guideline_15"
+            android:id="@+id/out_hor_guideline_13"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.13" />
 
         <android.support.constraint.Guideline
-            android:id="@+id/out_hor_guideline_90"
+            android:id="@+id/out_hor_guideline_95"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.90" />
+            app:layout_constraintGuide_percent="0.95" />
 
         <android.support.constraint.Guideline
             android:id="@+id/ver_guideline_05"
@@ -56,7 +56,7 @@
             app:layout_constraintGuide_percent="0.80" />
 
         <android.support.constraint.Guideline
-            android:id="@+id/ver_guideline_95"
+            android:id="@+id/ver_guideline_90"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -76,7 +76,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_55"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_13"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -90,7 +90,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_28"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_13"
             app:layout_constraintEnd_toEndOf="@id/ver_guideline_33"
             app:layout_constraintStart_toStartOf="@id/ver_guideline_05"
             app:layout_constraintTop_toTopOf="parent" />
@@ -104,7 +104,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_25"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_13"
             app:layout_constraintEnd_toEndOf="@id/ver_guideline_80"
             app:layout_constraintStart_toStartOf="@id/ver_guideline_67"
             app:layout_constraintTop_toTopOf="parent" />
@@ -118,8 +118,8 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_30"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
-            app:layout_constraintEnd_toEndOf="@id/ver_guideline_95"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_13"
+            app:layout_constraintEnd_toEndOf="@id/ver_guideline_90"
             app:layout_constraintStart_toEndOf="@id/ver_guideline_80"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -132,9 +132,9 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_30"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/hor_guideline_15"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_13"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ver_guideline_95"
+            app:layout_constraintStart_toEndOf="@id/ver_guideline_90"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
@@ -210,7 +210,7 @@
             android:layout_marginStart="50dp"
             android:background="@color/white"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_form_title"
@@ -230,7 +230,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/out_hor_guideline_90"
+            app:layout_constraintTop_toTopOf="@+id/out_hor_guideline_95"
             app:marqueeAnimDuration="4000"
             app:smvTextColor="@color/black"
             app:smvTextEllipsize="middle"
@@ -247,7 +247,7 @@
             android:layout_marginStart="50dp"
             android:background="@color/white"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_form_title">
@@ -403,7 +403,7 @@
             android:textSize="@dimen/text_size_180"
             android:textStyle="bold"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_90"
+            app:layout_constraintBottom_toBottomOf="@id/out_hor_guideline_95"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_form_title" />

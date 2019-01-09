@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 import com.android.databinding.library.baseAdapters.BR;
@@ -52,14 +53,13 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
 
     private IAlarmPresenter mAlarmPresenter;
 
-    private WarnRecycleViewAdapter adapter;
+
     private ShelfRecycleViewAdapter shelfAdapter;
     private BaseRecycleViewAdapter<UserDisplayVM, OrderCellBinding> userAdapter;
 
     private List<String> voices;
     private List<UserDisplayVM> userDisplays;
     private VoiceSpeakUtils voiceSpeakUtils;
-
 
 
     @Override
@@ -106,13 +106,15 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         binding.rvUser.setAdapter(userAdapter);
 
         for (int i = 0; i < 8; i++) {
-            shelfStates.add(new ShelfLedState("000" + i, "1"));
+            shelfStates.add(new ShelfLedState(String.format(Locale.CHINA, "000%d", i + 1), "1"));
         }
         shelfAdapter = new ShelfRecycleViewAdapter(this, shelfStates, getItemHeight());
         RecyclerView.LayoutManager grid = new GridLayoutManager(this, 4);
         binding.rvState.setLayoutManager(grid);
         binding.rvState.hasFixedSize();
         binding.rvState.setAdapter(shelfAdapter);
+
+        Log.e("UUID", UniquenessIdFactory.getId(this));
     }
 
     @Override
@@ -122,17 +124,17 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
 
     @Override
     public void showWarning(List<OperateWarningInformViewModel> alarmInfo, boolean isFirst) {
-        if (isFirst) {
-            binding.rvWarning.setVisibility(View.VISIBLE);
-            adapter = new WarnRecycleViewAdapter<>(this, alarmInfo, R.layout.item_recycleview_alarm, BR.VM, getItemHeight());
-            RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1);
-            adapter.setRecycleViewItemClickListener(this);
-            binding.rvWarning.setLayoutManager(layoutManager);
-            binding.rvWarning.setHasFixedSize(true);
-            binding.rvWarning.setAdapter(adapter);
-        } else {
-            adapter.notifyDataSetChanged();
-        }
+//        if (isFirst) {
+//            binding.rvWarning.setVisibility(View.VISIBLE);
+//            adapter = new WarnRecycleViewAdapter<>(this, alarmInfo, R.layout.item_recycleview_alarm, BR.VM, getItemHeight());
+//            RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 1);
+//            adapter.setRecycleViewItemClickListener(this);
+//            binding.rvWarning.setLayoutManager(layoutManager);
+//            binding.rvWarning.setHasFixedSize(true);
+//            binding.rvWarning.setAdapter(adapter);
+//        } else {
+//            adapter.notifyDataSetChanged();
+//        }
 
     }
 
@@ -156,8 +158,18 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
     public void showGreetForUser(UserInViewModel user, String warehouseNo, boolean isOpenDoor) {
         voices.clear();
         if (isOpenDoor) {
+            int index = -1;
             voices.add("welcome");
             voiceSpeakUtils.speak(voices);
+            for (int i = 0; i < userDisplays.size(); i++) {
+                boolean exit = userDisplays.get(i).getUserNo().equals(user.getUserNo());
+                if (exit) {
+                    index = i;
+                }
+            }
+            if (index != -1) {
+                userDisplays.remove(index);
+            }
             userDisplays.add(new UserDisplayVM(user.getUserNo(), user.getUserName(), user.getOrderNo()));
             userAdapter.notifyDataSetChanged();
         }
@@ -184,12 +196,10 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         if (isCheck) {
             binding.tvCheck.setText("仓  库  盘  点  中");
             binding.tvCheck.setVisibility(View.VISIBLE);
-            binding.rvWarning.setVisibility(View.GONE);
-            binding.llFormTitle.setVisibility(View.GONE);
+            binding.group.setVisibility(View.GONE);
         } else {
             binding.tvCheck.setVisibility(View.GONE);
-            binding.rvWarning.setVisibility(View.VISIBLE);
-            binding.llFormTitle.setVisibility(View.VISIBLE);
+            binding.group.setVisibility(View.VISIBLE);
         }
     }
 
@@ -198,12 +208,10 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         if (isMaintain) {
             binding.tvCheck.setText("仓   库   维   修   中");
             binding.tvCheck.setVisibility(View.VISIBLE);
-            binding.rvWarning.setVisibility(View.GONE);
-            binding.llFormTitle.setVisibility(View.GONE);
+            binding.group.setVisibility(View.GONE);
         } else {
             binding.tvCheck.setVisibility(View.GONE);
-            binding.rvWarning.setVisibility(View.VISIBLE);
-            binding.llFormTitle.setVisibility(View.VISIBLE);
+            binding.group.setVisibility(View.VISIBLE);
         }
     }
 
@@ -234,9 +242,9 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
     @Override
     public void showDoorState(String warehouseNo, EntranceGuardState entranceGuardState) {
         if (entranceGuardState.ConnectState.isEmpty()) {
-            binding.fingerprintStatus.setBackgroundResource(R.drawable.error);
+            binding.fingerprintStatus.setImageResource(R.drawable.error);
         } else {
-            binding.fingerprintStatus.setBackgroundResource(R.drawable.correct);
+            binding.fingerprintStatus.setImageResource(R.drawable.correct);
         }
     }
 
@@ -307,6 +315,7 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         // 屏幕高（px，如：800px）
         int screenHeight = (dm.heightPixels);
 //        int marginTopAndBottom = (int) (85 * density + 0.5f);
-        return screenHeight >> 2;
+//        return screenHeight >> 2;
+        return (int) (screenHeight * (26.5 / 100.00));
     }
 }
