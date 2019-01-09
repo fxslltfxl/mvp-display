@@ -1,29 +1,63 @@
 package cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel;
 
-public class ShelfState {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    private String ShelfNo;
+import java.util.ArrayList;
+import java.util.List;
 
-    int state;
+public class ShelfState implements Parcelable {
 
-    public String getShelfNo() {
-        return ShelfNo == null ? "" : ShelfNo;
+    public String WareHouseNo;
+    public List<ShelfLedState> Shelfs;
+
+    public String getWareHouseNo() {
+        return WareHouseNo == null ? "" : WareHouseNo;
     }
 
-    public void setShelfNo(String shelfNo) {
-        ShelfNo = shelfNo;
+    public void setWareHouseNo(String wareHouseNo) {
+        WareHouseNo = wareHouseNo;
     }
 
-    public ShelfState(int state) {
-        this.state = state;
+    public List<ShelfLedState> getShelfs() {
+        if (Shelfs == null) {
+            return new ArrayList<>();
+        }
+        return Shelfs;
     }
 
-    public int getState() {
-        return state;
+    public void setShelfs(List<ShelfLedState> shelfs) {
+        Shelfs = shelfs;
     }
 
-    public void setState(int state) {
-        this.state = state;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.WareHouseNo);
+        dest.writeTypedList(this.Shelfs);
+    }
+
+    public ShelfState() {
+    }
+
+    protected ShelfState(Parcel in) {
+        this.WareHouseNo = in.readString();
+        this.Shelfs = in.createTypedArrayList(ShelfLedState.CREATOR);
+    }
+
+    public static final Parcelable.Creator<ShelfState> CREATOR = new Parcelable.Creator<ShelfState>() {
+        @Override
+        public ShelfState createFromParcel(Parcel source) {
+            return new ShelfState(source);
+        }
+
+        @Override
+        public ShelfState[] newArray(int size) {
+            return new ShelfState[size];
+        }
+    };
 }

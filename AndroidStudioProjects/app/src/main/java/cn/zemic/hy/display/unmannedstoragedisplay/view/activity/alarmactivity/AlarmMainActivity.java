@@ -22,7 +22,9 @@ import cn.zemic.hy.display.unmannedstoragedisplay.adapter.ShelfRecycleViewAdapte
 import cn.zemic.hy.display.unmannedstoragedisplay.adapter.WarnRecycleViewAdapter;
 import cn.zemic.hy.display.unmannedstoragedisplay.databinding.ActivityMainNewBinding;
 import cn.zemic.hy.display.unmannedstoragedisplay.databinding.OrderCellBinding;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.EntranceGuardState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.ShelfLedState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.ShelfState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserDisplayVM;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserInViewModel;
@@ -42,18 +44,23 @@ import cn.zemic.hy.display.unmannedstoragedisplay.view.widget.CustomToast;
  */
 public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnRecycleViewAdapter.OnRecycleViewItemClickListener {
 
-    private WarnRecycleViewAdapter adapter;
-    private ActivityMainNewBinding binding;
-    private IAlarmPresenter mAlarmPresenter;
-    private List<String> voices;
     private int second;
     private int minute;
     private int hour;
-    private VoiceSpeakUtils voiceSpeakUtils;
+
+    private ActivityMainNewBinding binding;
+
+    private IAlarmPresenter mAlarmPresenter;
+
+    private WarnRecycleViewAdapter adapter;
+    private ShelfRecycleViewAdapter shelfAdapter;
+    private BaseRecycleViewAdapter<UserDisplayVM, OrderCellBinding> userAdapter;
+
+    private List<String> voices;
     private List<UserDisplayVM> userDisplays;
-    private List<ShelfState> shelfStates;
-    BaseRecycleViewAdapter<UserDisplayVM, OrderCellBinding> userAdapter;
-    ShelfRecycleViewAdapter shelfAdapter;
+    private VoiceSpeakUtils voiceSpeakUtils;
+
+
 
     @Override
     public void onStart() {
@@ -77,7 +84,7 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         hour = date.getHours();
         binding = DataBindingUtil.setContentView(AlarmMainActivity.this, R.layout.activity_main_new);
         userDisplays = new ArrayList<>();
-        shelfStates = new ArrayList<>();
+        List<ShelfLedState> shelfStates = new ArrayList<>();
         voiceSpeakUtils = new VoiceSpeakUtils(this);
         //play voice
         voices = Collections.synchronizedList(new ArrayList<>());
@@ -91,47 +98,21 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         mAlarmPresenter = new AlarmPresenter(this, new AlarmRepository());
         mAlarmPresenter.getWareHouseNoAndWarningInfo(UniquenessIdFactory.getId(this));
 
-
         //
-        userDisplays.add(new UserDisplayVM("1", "1", ""));
         userAdapter = new BaseRecycleViewAdapter<>(this, userDisplays, R.layout.order_cell, BR.VM);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         binding.rvUser.setLayoutManager(layoutManager);
         binding.rvUser.hasFixedSize();
         binding.rvUser.setAdapter(userAdapter);
 
-
         for (int i = 0; i < 8; i++) {
-            shelfStates.add(new ShelfState(1));
+            shelfStates.add(new ShelfLedState("000" + i, "1"));
         }
         shelfAdapter = new ShelfRecycleViewAdapter(this, shelfStates, getItemHeight());
         RecyclerView.LayoutManager grid = new GridLayoutManager(this, 4);
         binding.rvState.setLayoutManager(grid);
         binding.rvState.hasFixedSize();
         binding.rvState.setAdapter(shelfAdapter);
-
-
-    }
-
-    private int getItemHeight() {
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        // 屏幕密度（像素比例：0.75/1.0/1.5/2.0）
-        float density = dm.density;
-        // 屏幕密度（每寸像素：120/160/240/320）
-//        float densityDPI = dm.densityDpi;
-//        float xdpi = dm.xdpi;
-//        float ydpi = dm.ydpi;
-//        // 屏幕宽（dip，如：320px）
-//        int screenWidthDip = dm.widthPixels;
-//        // 屏幕高（dip，如：533dip）
-//        int screenHeightDip = dm.heightPixels;
-//        // 屏幕宽（px，如：480px）
-//        int screenWidth = (int) (dm.widthPixels * density + 0.5f);
-        // 屏幕高（px，如：800px）
-        int screenHeight = (dm.heightPixels);
-//        int marginTopAndBottom = (int) (85 * density + 0.5f);
-        return screenHeight >> 2;
     }
 
     @Override
@@ -177,16 +158,25 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         if (isOpenDoor) {
             voices.add("welcome");
             voiceSpeakUtils.speak(voices);
-            userDisplays.add(new UserDisplayVM(user.getUserNo(), user.getUserName(), ""));
+            userDisplays.add(new UserDisplayVM(user.getUserNo(), user.getUserName(), user.getOrderNo()));
             userAdapter.notifyDataSetChanged();
         }
     }
 
     @Override
     public void showUserOut(String wareHouse, UserOutVM user) {
-        UserDisplayVM userDisplayVM = new UserDisplayVM().userOut2UserDisplay(user);
-        userDisplays.remove(userDisplayVM);
-        userAdapter.notifyDataSetChanged();
+        int index = -1;
+        for (int i = 0; i < userDisplays.size(); i++) {
+            if (user.getUserNo().equals(userDisplays.get(i).getUserNo())) {
+                index = i;
+                break;
+            }
+        }
+        if (index != -1) {
+            userDisplays.remove(index);
+            userAdapter.notifyDataSetChanged();
+        }
+
     }
 
     @Override
@@ -232,6 +222,25 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
     }
 
     @Override
+    public void showShelfState(String shelfWarehouseNo, ShelfState shelfState) {
+        shelfAdapter.setDataChange(shelfState.Shelfs);
+    }
+
+
+    @Override
+    public void showBaseStationState() {
+    }
+
+    @Override
+    public void showDoorState(String warehouseNo, EntranceGuardState entranceGuardState) {
+        if (entranceGuardState.ConnectState.isEmpty()) {
+            binding.fingerprintStatus.setBackgroundResource(R.drawable.error);
+        } else {
+            binding.fingerprintStatus.setBackgroundResource(R.drawable.correct);
+        }
+    }
+
+    @Override
     public void onItemClick(ViewDataBinding dataBinding, int position) {
         mAlarmPresenter.loadDetailWarningInfo(position);
     }
@@ -239,11 +248,6 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
     @Override
     public void onLongItemClick(ViewDataBinding dataBinding, int position) {
 
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
     }
 
     private void run() {
@@ -283,5 +287,26 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
             String ticks = String.format("%s:%s:%s", hoursStr, minuteStr, secondStr);
             AlarmMainActivity.this.binding.tvTime.setText(ticks);
         });
+    }
+
+    private int getItemHeight() {
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        // 屏幕密度（像素比例：0.75/1.0/1.5/2.0）
+//        float density = dm.density;
+        // 屏幕密度（每寸像素：120/160/240/320）
+//        float densityDPI = dm.densityDpi;
+//        float xdpi = dm.xdpi;
+//        float ydpi = dm.ydpi;
+//        // 屏幕宽（dip，如：320px）
+//        int screenWidthDip = dm.widthPixels;
+//        // 屏幕高（dip，如：533dip）
+//        int screenHeightDip = dm.heightPixels;
+//        // 屏幕宽（px，如：480px）
+//        int screenWidth = (int) (dm.widthPixels * density + 0.5f);
+        // 屏幕高（px，如：800px）
+        int screenHeight = (dm.heightPixels);
+//        int marginTopAndBottom = (int) (85 * density + 0.5f);
+        return screenHeight >> 2;
     }
 }

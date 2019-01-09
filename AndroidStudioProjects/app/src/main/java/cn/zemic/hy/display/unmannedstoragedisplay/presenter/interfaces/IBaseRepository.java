@@ -2,7 +2,9 @@ package cn.zemic.hy.display.unmannedstoragedisplay.presenter.interfaces;
 
 import java.util.List;
 
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.EntranceGuardState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.ShelfState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserInViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserOutVM;
 
@@ -48,5 +50,9 @@ public interface IBaseRepository {
         void onRunningMaintain(String wareHouse, boolean isMaintain);
 
         void onFetchTemperatureAndHumidityFinish(String wareHouseNo,float temperature, float humidity);
+
+        void onReceiveDoorState(String warehouseNo, EntranceGuardState entranceGuardState);
+
+        void onReceiveShelfState(String shelfWarehouseNo, ShelfState shelfState);
     }
 }

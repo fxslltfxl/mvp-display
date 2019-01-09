@@ -3,6 +3,7 @@ package cn.zemic.hy.display.unmannedstoragedisplay.presenter.imp.alarm;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -12,8 +13,10 @@ import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import cn.zemic.hy.display.unmannedstoragedisplay.model.bean.FilterLedForMobileUiCommand;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.EntranceGuardState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.MachineBindDoorControlViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
+import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.ShelfState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserInViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.UserOutVM;
 import cn.zemic.hy.display.unmannedstoragedisplay.network.URLFactory;
@@ -42,6 +45,9 @@ public class AlarmRepository implements IAlarmRepository {
     private static final int CHECK = 5;
     private static final int MAINTAIN = 6;
     private static final int TEMPERATURE_HUMIDITY = 7;
+    private static final int ENTRANCE_GUARD_STATE = 8;
+    private static final int SHELF_STATE = 9;
+
     private static IBaseRepository.OnGetWarningDataFinish mOnGetWarningDataFinish;
     private static String mConnectionId;
     private MyMessagesHandler mHandler;
@@ -53,8 +59,8 @@ public class AlarmRepository implements IAlarmRepository {
         FetchDataService.getWareHouseNoService(filter).enqueue(new Callback<String>() {
             @Override
             public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
-                if(!response.isSuccessful()){
-                    onGetWareHouseNoFinish.onFail(String.format(Locale.CHINA,"获取仓库号响应异常，错误码：%d",response.code()));
+                if (!response.isSuccessful()) {
+                    onGetWareHouseNoFinish.onFail(String.format(Locale.CHINA, "获取仓库号响应异常，错误码：%d", response.code()));
                     return;
                 }
                 String wareHouseNo = response.body();
@@ -73,7 +79,7 @@ public class AlarmRepository implements IAlarmRepository {
         mOnGetWarningDataFinish = onGetWarningDataFinish;
         mHandler = new MyMessagesHandler();
         Platform.loadPlatformComponent(new AndroidPlatformComponent());
-        String serverURI = String.format(Locale.CHINA,"%ssignalr", URLFactory.serverURI);
+        String serverURI = String.format(Locale.CHINA, "%ssignalr", URLFactory.serverURI);
 //        String serverURI = "http://192.168.0.2:25535/signalr";
         HubConnection connection = new HubConnection(serverURI) {
             @Override
@@ -101,12 +107,14 @@ public class AlarmRepository implements IAlarmRepository {
         mHubProxy.on("sendUserIn", this::runWithUserInfo, String.class, Boolean.class, UserInViewModel.class, MachineBindDoorControlViewModel.class);
         mHubProxy.on("sendCheck", this::runWithIsCheck, String.class, Boolean.class);
         mHubProxy.on("sendMaintain", this::runWithMaintain, String.class, Boolean.class);
-        mHubProxy.on("sendTemAndHum", this::runWithTemperature, String.class, Float.class,Float.class);
+        mHubProxy.on("sendTemAndHum", this::runWithTemperature, String.class, Float.class, Float.class);
         mHubProxy.on("sendUserLeave", this::runWithUserOut, String.class, UserOutVM.class);
         //接收告警信息
         mHubProxy.on("sendWarnInform", this::runWithWarnInfo, String.class, OperateWarningInformViewModel.class);
         //接受日志信息
         mHubProxy.on("sendConnectMessage", this::runWithConnectMsg, String.class, String.class, Boolean.class);
+        mHubProxy.on("sendAttendanceMachine", this::entranceGuardState, String.class, EntranceGuardState.class);
+        mHubProxy.on("sendLedShelfAndunit", this::shelfState, String.class, ShelfState.class);
         final SignalRFuture<Void> con = connection.start(new ServerSentEventsTransport(connection.getLogger()));
         try {
             con.get();
@@ -171,11 +179,11 @@ public class AlarmRepository implements IAlarmRepository {
         mHandler.sendMessage(message);
     }
 
-    private void runWithTemperature(String wareHouseNo,float temperature, float humidity) {
+    private void runWithTemperature(String wareHouseNo, float temperature, float humidity) {
         Message message = Message.obtain();
         message.what = TEMPERATURE_HUMIDITY;
         Bundle bundle = new Bundle();
-        bundle.putString("wareHouseNo",wareHouseNo);
+        bundle.putString("wareHouseNo", wareHouseNo);
         bundle.putFloat("temperature", temperature);
         bundle.putFloat("humidity", humidity);
         message.setData(bundle);
@@ -206,6 +214,26 @@ public class AlarmRepository implements IAlarmRepository {
         mHandler.sendMessage(message);
     }
 
+    private void entranceGuardState(String warehouseNo, EntranceGuardState entranceGuardState) {
+        Message message = Message.obtain();
+        message.what = ENTRANCE_GUARD_STATE;
+        Bundle bundle = new Bundle();
+        bundle.putString("warehouseNo", warehouseNo);
+        bundle.putParcelable("entranceGuardState", entranceGuardState);
+        message.setData(bundle);
+        mHandler.sendMessage(message);
+    }
+
+    private void shelfState(String warehouseNo, ShelfState shelfState) {
+        Message message = Message.obtain();
+        message.what = SHELF_STATE;
+        Bundle bundle = new Bundle();
+        bundle.putString("warehouseNo", warehouseNo);
+        bundle.putParcelable("shelfState", shelfState);
+        message.setData(bundle);
+        mHandler.sendMessage(message);
+    }
+
     private void onError(Throwable error) {
         Message message = Message.obtain();
         message.what = DATA_ERROR;
@@ -229,19 +257,19 @@ public class AlarmRepository implements IAlarmRepository {
                     float temperature = bundletempAndHum.getFloat("temperature");
                     float humidity = bundletempAndHum.getFloat("humidity");
                     String wareHouseForTemp = bundletempAndHum.getString("wareHouseNo");
-                    mOnGetWarningDataFinish.onFetchTemperatureAndHumidityFinish(wareHouseForTemp,temperature,humidity);
+                    mOnGetWarningDataFinish.onFetchTemperatureAndHumidityFinish(wareHouseForTemp, temperature, humidity);
                     break;
                 case MAINTAIN:
                     Bundle bundleMaintain = msg.getData();
                     String warehouseNoForMaintain = bundleMaintain.getString("warehouseNo");
                     Boolean isMaintain = bundleMaintain.getBoolean("isMaintain");
-                    mOnGetWarningDataFinish.onRunningMaintain(warehouseNoForMaintain,isMaintain);
+                    mOnGetWarningDataFinish.onRunningMaintain(warehouseNoForMaintain, isMaintain);
                     break;
                 case CHECK:
                     Bundle bundleCheck = msg.getData();
                     String warehouseNo = bundleCheck.getString("warehouseNo");
                     Boolean isCheck = bundleCheck.getBoolean("isCheck");
-                    mOnGetWarningDataFinish.onRunningCheck(warehouseNo,isCheck);
+                    mOnGetWarningDataFinish.onRunningCheck(warehouseNo, isCheck);
                     break;
 
                 case DATA_SEND_MSG:
@@ -293,10 +321,22 @@ public class AlarmRepository implements IAlarmRepository {
                     Bundle userOutBundle = msg.getData();
                     UserOutVM userOut = userOutBundle.getParcelable("userOut");
                     String userOutWarehouseNo = userOutBundle.getString("warehouseNo");
-                    if (null==userOut){
+                    if (null == userOut) {
                         break;
                     }
-                    mOnGetWarningDataFinish.onUserOut(userOutWarehouseNo,userOut);
+                    mOnGetWarningDataFinish.onUserOut(userOutWarehouseNo, userOut);
+                    break;
+                case ENTRANCE_GUARD_STATE:
+                    Bundle doorState = msg.getData();
+                    String doorWarehouseNo = doorState.getString("warehouseNo");
+                    EntranceGuardState entranceGuardState = doorState.getParcelable("entranceGuardState");
+                    mOnGetWarningDataFinish.onReceiveDoorState(doorWarehouseNo, entranceGuardState);
+                    break;
+                case SHELF_STATE:
+                    Bundle shelfStateBundle = msg.getData();
+                    String shelfWarehouseNo = shelfStateBundle.getString("warehouseNo");
+                    ShelfState shelfState = shelfStateBundle.getParcelable("shelfState");
+                    mOnGetWarningDataFinish.onReceiveShelfState(shelfWarehouseNo, shelfState);
                     break;
                 default:
                     break;
