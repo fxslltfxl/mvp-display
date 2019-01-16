@@ -107,6 +107,8 @@ public class AlarmRepository implements IAlarmRepository {
         mHubProxy.on("sendWarnInform", this::runWithWarnInfo, String.class, OperateWarningInformViewModel.class);
         //接受日志信息
         mHubProxy.on("sendConnectMessage", this::runWithConnectMsg, String.class, String.class, Boolean.class);
+        //考勤机连接信息
+        mHubProxy.on("sendAttendanceMachine", this::attendanceMachine, String.class, String.class, Boolean.class);
         final SignalRFuture<Void> con = connection.start(new ServerSentEventsTransport(connection.getLogger()));
         try {
             con.get();
@@ -205,6 +207,21 @@ public class AlarmRepository implements IAlarmRepository {
         message.obj = connectionMsg;
         mHandler.sendMessage(message);
     }
+
+    private void attendanceMachine(String connectionMsg, String connectionId, Boolean isConnect) {
+        Message message = Message.obtain();
+        message.what = DATA_SEND_MSG;
+        Bundle bundle = new Bundle();
+        if (isConnect) {
+            mConnectionId = connectionId;
+        }
+        bundle.putString("connectionId", connectionId);
+        bundle.putBoolean("isConnect", isConnect);
+        message.setData(bundle);
+        message.obj = connectionMsg;
+        mHandler.sendMessage(message);
+    }
+
 
     private void onError(Throwable error) {
         Message message = Message.obtain();
