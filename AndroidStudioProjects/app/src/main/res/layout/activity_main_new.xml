@@ -281,7 +281,7 @@
             android:id="@+id/rv_user"
             android:layout_width="@dimen/zero"
             android:layout_height="@dimen/zero"
-            android:layout_marginTop="@dimen/six"
+            android:layout_marginTop="@dimen/two"
             android:layout_marginStart="@dimen/height_50"
             android:layout_marginLeft="@dimen/height_50"
             app:layout_constraintBottom_toBottomOf="@+id/out_hor_guideline_95"

@@ -46,7 +46,7 @@ class AlarmRepository : IAlarmRepository {
         })
     }
 
-    override fun connectServiceForGetWarningAndUserInfo(deviceId: String, wareHouseNo: String, onGetWarningDataFinish: IBaseRepository.OnGetWarningDataFinish) {
+    override fun connectService(deviceId: String, wareHouseNo: String, onGetWarningDataFinish: IBaseRepository.OnGetWarningDataFinish) {
         mOnGetWarningDataFinish = onGetWarningDataFinish
         mHandler = MyMessagesHandler()
         Platform.loadPlatformComponent(AndroidPlatformComponent())

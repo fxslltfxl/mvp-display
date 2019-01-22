@@ -17,7 +17,7 @@ public interface IAlarmRepository extends IBaseRepository {
      * @param deviceId                 search condition
      * @param onGetWarningDataFinish get data finish callback
      */
-    void connectServiceForGetWarningAndUserInfo(String deviceId,String wareHouseNo, IBaseRepository.OnGetWarningDataFinish onGetWarningDataFinish);
+    void connectService(String deviceId, String wareHouseNo, IBaseRepository.OnGetWarningDataFinish onGetWarningDataFinish);
 
     HubProxy getHubProxy();
 }

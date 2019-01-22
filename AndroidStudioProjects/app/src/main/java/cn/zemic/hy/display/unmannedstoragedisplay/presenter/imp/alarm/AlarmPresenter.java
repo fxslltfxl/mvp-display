@@ -49,7 +49,7 @@ public class AlarmPresenter extends BasePresenter implements IAlarmPresenter {
             public void onSuccess(String wareHouseNo) {
                 mWareHouseNo = wareHouseNo;
                 //连接服务器，获取告警信息 start
-                interaction.connectServiceForGetWarningAndUserInfo(deviceId, wareHouseNo, new IBaseRepository.OnGetWarningDataFinish() {
+                interaction.connectService(deviceId, wareHouseNo, new IBaseRepository.OnGetWarningDataFinish() {
                     @Override
                     public void onSuccess(List<OperateWarningInformViewModel> alarmInfoBeans, boolean isFirst) {
                         iAlarmView.hideLoading();
