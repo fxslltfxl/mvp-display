@@ -17,4 +17,6 @@
     <string name="warn">告警</string>
     <string name="unconnect">失联</string>
     <string name="normal">正常</string>
+    <string name="run">运行</string>
+    <string name="connect">连接</string>
 </resources>

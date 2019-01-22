@@ -58,19 +58,26 @@ public class ShelfRecycleViewAdapter extends RecyclerView.Adapter<BaseViewHolder
 
         switch (shelfState) {
             case "0":
-                holder.getBinding().correct.setImageResource(R.drawable.correct_normal);
-                holder.getBinding().warn.setImageResource(R.drawable.warn_normal);
-                holder.getBinding().error.setImageResource(R.drawable.error);
+//                holder.getBinding().correct.setImageResource(R.drawable.correct_normal);
+//                holder.getBinding().warn.setImageResource(R.drawable.warn_normal);
+//                holder.getBinding().error.setImageResource(R.drawable.error);
+                holder.getBinding().ivConnect.setImageResource(R.drawable.error);
+                holder.getBinding().ivRun.setImageResource(R.drawable.error);
                 break;
             case "1":
-                holder.getBinding().correct.setImageResource(R.drawable.correct);
-                holder.getBinding().warn.setImageResource(R.drawable.warn_normal);
-                holder.getBinding().error.setImageResource(R.drawable.error_normal);
+//                holder.getBinding().correct.setImageResource(R.drawable.correct);
+//                holder.getBinding().warn.setImageResource(R.drawable.warn_normal);
+//                holder.getBinding().error.setImageResource(R.drawable.error_normal);
+                holder.getBinding().ivConnect.setImageResource(R.drawable.correct);
+                holder.getBinding().ivRun.setImageResource(R.drawable.correct);
+
                 break;
             case "2":
-                holder.getBinding().correct.setImageResource(R.drawable.correct_normal);
-                holder.getBinding().warn.setImageResource(R.drawable.warn);
-                holder.getBinding().error.setImageResource(R.drawable.error_normal);
+//                holder.getBinding().correct.setImageResource(R.drawable.correct_normal);
+//                holder.getBinding().warn.setImageResource(R.drawable.warn);
+//                holder.getBinding().error.setImageResource(R.drawable.error_normal);
+                holder.getBinding().ivConnect.setImageResource(R.drawable.correct);
+                holder.getBinding().ivRun.setImageResource(R.drawable.warn);
                 break;
             default:
                 break;
