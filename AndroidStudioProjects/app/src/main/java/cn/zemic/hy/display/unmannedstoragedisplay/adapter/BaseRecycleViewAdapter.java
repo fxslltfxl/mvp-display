@@ -13,16 +13,12 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.zemic.hy.display.unmannedstoragedisplay.R;
-
 
 /**
  * @author fxs
  */
 public class BaseRecycleViewAdapter<T, K extends ViewDataBinding> extends RecyclerView.Adapter<BaseViewHolder<K>> {
 
-    private static final int TYPE_ONE = 1;
-    private static final int TYPE_SECOND = 2;
     /**
      * 数据源
      */
@@ -37,11 +33,18 @@ public class BaseRecycleViewAdapter<T, K extends ViewDataBinding> extends Recycl
      */
     private int variableId;
     private Context mContext;
-    private int mItemHeight;
+    private int mItemHeight = -1;
     /**
      * 自定义item单击事件
      */
     private OnRecycleViewItemClickListener listener;
+
+    public BaseRecycleViewAdapter(Context mContext, List<T> mList, @LayoutRes int resID, int variableId) {
+        this.mList = mList;
+        this.resID = resID;
+        this.variableId = variableId;
+        this.mContext = mContext;
+    }
 
     public BaseRecycleViewAdapter(Context mContext, List<T> mList, @LayoutRes int resID, int variableId, int itemHeight) {
         this.mList = mList;
@@ -53,15 +56,12 @@ public class BaseRecycleViewAdapter<T, K extends ViewDataBinding> extends Recycl
 
     @Override
     public BaseViewHolder<K> onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView;
-        if (viewType == TYPE_ONE) {
-            itemView = LayoutInflater.from(mContext).inflate(resID, parent, false);
-        } else {
-            itemView = LayoutInflater.from(mContext).inflate(R.layout.item_recycleview_alarm_gary, parent, false);
+        View itemView = LayoutInflater.from(mContext).inflate(resID, parent, false);
+        if (mItemHeight != -1) {
+            GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) itemView.getLayoutParams();
+            layoutParams.height = mItemHeight;
+            itemView.setLayoutParams(layoutParams);
         }
-        GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) itemView.getLayoutParams();
-        layoutParams.height = mItemHeight;
-        itemView.setLayoutParams(layoutParams);
         return new BaseViewHolder<>(itemView);
     }
 
@@ -81,15 +81,6 @@ public class BaseRecycleViewAdapter<T, K extends ViewDataBinding> extends Recycl
         }
         //刷新页面
         holder.getBinding().executePendingBindings();
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (position % 2 == 0) {
-            return TYPE_ONE;
-        } else {
-            return TYPE_SECOND;
-        }
     }
 
     @Override

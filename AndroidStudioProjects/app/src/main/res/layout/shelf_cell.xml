@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/border">
+
+    <data></data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_hor_guideline_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_ver_guideline_40"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_ver_guideline_50"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_hor_guideline_25"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_hor_guideline_60"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_hor_guideline_71"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.71" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_hor_guideline_90"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/cell_hor_guideline_100"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+        <TextView
+            android:id="@+id/shelf_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:text="货架"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_25" />
+
+        <ImageView
+            android:id="@+id/iv_connect"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="24dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/correct"
+            app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_60"
+            app:layout_constraintRight_toLeftOf="@+id/cell_ver_guideline_40" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:text="@string/connect"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_60"
+            app:layout_constraintLeft_toRightOf="@+id/cell_ver_guideline_50" />
+
+        <ImageView
+            android:id="@+id/iv_run"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="24dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/correct"
+            app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_90"
+            app:layout_constraintRight_toLeftOf="@+id/cell_ver_guideline_40" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:text="@string/run"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cell_hor_guideline_90"
+            app:layout_constraintLeft_toRightOf="@+id/cell_ver_guideline_50" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -28,28 +28,14 @@
 
 
         <TextView
-            android:id="@+id/tv_user_no"
+            android:id="@+id/tv_warehouse_no"
             android:layout_width="@dimen/zero"
             android:layout_height="@dimen/height_warning_item"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@{VM.userNo}"
+            android:text="@{VM.wareHouseNo}"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_35" />
-
-
-
-
-        <TextView
-            android:id="@+id/tv_user_name"
-            android:layout_width="@dimen/zero"
-            android:layout_height="@dimen/height_warning_item"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@{VM.userName}"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_35" />
-
 
 
         <TextView
@@ -94,7 +80,7 @@
             android:gravity="center"
             android:text="@{VM.warnContent}"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_30" />
+            android:textSize="@dimen/text_size_22" />
 
     </LinearLayout>
 </layout>
