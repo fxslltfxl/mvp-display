@@ -328,7 +328,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.10" />
+                app:layout_constraintGuide_percent="0.05" />
 
 
             <android.support.constraint.Guideline
@@ -336,7 +336,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.43" />
+                app:layout_constraintGuide_percent="0.35" />
 
 
             <android.support.constraint.Guideline
@@ -344,7 +344,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.78" />
+                app:layout_constraintGuide_percent="0.65" />
 
 
             <ImageView
@@ -559,7 +559,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="8dp"
-                android:src="@drawable/error"
+                android:src="@drawable/correct"
                 app:layout_constraintBottom_toBottomOf="@+id/image_fingerprint"
                 app:layout_constraintLeft_toRightOf="@+id/fingerprint" />
 
@@ -594,6 +594,74 @@
                 app:layout_constraintBottom_toBottomOf="@+id/image_door"
                 app:layout_constraintLeft_toRightOf="@+id/door" />
 
+            <ImageView
+                android:layout_width="@dimen/height_40"
+                android:layout_height="@dimen/height_40"
+                android:layout_marginEnd="150dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginBottom="150dp"
+                android:src="@drawable/correct"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:layout_width="@dimen/width_90"
+                android:layout_height="@dimen/height_40"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="150dp"
+                android:gravity="center|bottom"
+                android:text="正常"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_30"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/height_40"
+                android:layout_height="@dimen/height_40"
+                android:layout_marginEnd="150dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginBottom="100dp"
+                android:src="@drawable/warn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:layout_width="@dimen/width_90"
+                android:layout_height="@dimen/height_40"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="100dp"
+                android:gravity="center|bottom"
+                android:text="告警"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_30"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/height_40"
+                android:layout_height="@dimen/height_40"
+                android:layout_marginEnd="150dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginBottom="50dp"
+                android:src="@drawable/error"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:layout_width="@dimen/width_90"
+                android:layout_height="@dimen/height_40"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="50dp"
+                android:gravity="center|bottom"
+                android:text="失联"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_30"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
         <TextView

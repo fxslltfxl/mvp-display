@@ -18,11 +18,10 @@ import java.util.List;
 import java.util.Locale;
 
 import cn.zemic.hy.display.unmannedstoragedisplay.R;
-import cn.zemic.hy.display.unmannedstoragedisplay.adapter.BaseRecycleViewAdapter;
 import cn.zemic.hy.display.unmannedstoragedisplay.adapter.ShelfRecycleViewAdapter;
+import cn.zemic.hy.display.unmannedstoragedisplay.adapter.UserInfoAdapter;
 import cn.zemic.hy.display.unmannedstoragedisplay.adapter.WarnRecycleViewAdapter;
 import cn.zemic.hy.display.unmannedstoragedisplay.databinding.ActivityMainNewBinding;
-import cn.zemic.hy.display.unmannedstoragedisplay.databinding.OrderCellBinding;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.EntranceGuardState;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.OperateWarningInformViewModel;
 import cn.zemic.hy.display.unmannedstoragedisplay.model.viewmodel.ShelfLedState;
@@ -55,7 +54,7 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
 
 
     private ShelfRecycleViewAdapter shelfAdapter;
-    private BaseRecycleViewAdapter<UserDisplayVM, OrderCellBinding> userAdapter;
+    private UserInfoAdapter userAdapter;
 
     private List<String> voices;
     private List<UserDisplayVM> userDisplays;
@@ -98,8 +97,7 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         mAlarmPresenter = new AlarmPresenter(this, new AlarmRepository());
         mAlarmPresenter.getWareHouseNoAndWarningInfo(UniquenessIdFactory.getId(this));
 
-        //
-        userAdapter = new BaseRecycleViewAdapter<>(this, userDisplays, R.layout.order_cell, BR.VM);
+        userAdapter = new UserInfoAdapter(this, userDisplays, R.layout.order_cell, BR.VM);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         binding.rvUser.setLayoutManager(layoutManager);
         binding.rvUser.hasFixedSize();

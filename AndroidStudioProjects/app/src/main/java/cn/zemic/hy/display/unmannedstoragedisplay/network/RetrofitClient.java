@@ -20,7 +20,7 @@ public class RetrofitClient {
                 .create();
 
         private static Retrofit mRetrofit = new Retrofit.Builder()
-                .baseUrl(URLFactory.serverURI)
+                .baseUrl(URLFactory.smartShelfOfficialUrl)
 //                .baseUrl("http://192.168.0.2:25535/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();

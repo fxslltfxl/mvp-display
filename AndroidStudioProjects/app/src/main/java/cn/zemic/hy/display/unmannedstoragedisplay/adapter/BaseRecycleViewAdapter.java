@@ -54,9 +54,28 @@ public class BaseRecycleViewAdapter<T, K extends ViewDataBinding> extends Recycl
         this.mItemHeight = itemHeight;
     }
 
+    public int getViewType(int position) {
+        return -1;
+    }
+
+    public @LayoutRes
+    int getResID(int viewType) {
+        return -1;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return getViewType(position);
+    }
+
     @Override
     public BaseViewHolder<K> onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(mContext).inflate(resID, parent, false);
+        View itemView;
+        if (getResID(viewType) == -1) {
+            itemView = LayoutInflater.from(mContext).inflate(resID, parent, false);
+        } else {
+            itemView = LayoutInflater.from(mContext).inflate(getResID(viewType), parent, false);
+        }
         if (mItemHeight != -1) {
             GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) itemView.getLayoutParams();
             layoutParams.height = mItemHeight;

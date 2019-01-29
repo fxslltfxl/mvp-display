@@ -6,6 +6,7 @@
     <color name="start_blue">#0082C8</color>
     <color name="center_blue">#0B8EC6</color>
     <color name="end_blue">#27AAC1</color>
+    <color name="light_sky_blue">#3db5ca</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorNoAccent">#40FF81</color>
     <color name="colorAccent">#FF4081</color>

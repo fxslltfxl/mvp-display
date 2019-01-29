@@ -50,7 +50,7 @@ class AlarmRepository : IAlarmRepository {
         mOnGetWarningDataFinish = onGetWarningDataFinish
         mHandler = MyMessagesHandler()
         Platform.loadPlatformComponent(AndroidPlatformComponent())
-        val serverURI = String.format(Locale.CHINA, "%ssignalr", URLFactory.serverURI)
+        val serverURI = String.format(Locale.CHINA, "%ssignalr", URLFactory.smartShelfOfficialUrl)
         //        String serverURI = "http://192.168.0.2:25535/signalr";
         val connection = object : HubConnection(serverURI) {
             override fun onConnected() {
