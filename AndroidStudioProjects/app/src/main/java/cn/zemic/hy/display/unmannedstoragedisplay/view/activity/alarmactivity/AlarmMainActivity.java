@@ -6,7 +6,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 
 import com.android.databinding.library.baseAdapters.BR;
@@ -44,18 +43,20 @@ import cn.zemic.hy.display.unmannedstoragedisplay.view.widget.CustomToast;
  */
 public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnRecycleViewAdapter.OnRecycleViewItemClickListener {
 
+    private static final int SHELF_COUNT = 8;
+    private static final int TEMPERATURE_LENGTH = 5;
+    private static final int SIXTY = 60;
+    private static final int TWENTY_FOUR = 24;
     private int second;
     private int minute;
     private int hour;
 
     private ActivityMainNewBinding binding;
-
     private IAlarmPresenter mAlarmPresenter;
-
-
     private ShelfRecycleViewAdapter shelfAdapter;
     private UserInfoAdapter userAdapter;
 
+    private BaseRecycleViewAdapter<UserDisplayVM, OrderCellBinding> userAdapter;
     private List<String> voices;
     private List<UserDisplayVM> userDisplays;
     private VoiceSpeakUtils voiceSpeakUtils;
@@ -103,7 +104,7 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         binding.rvUser.hasFixedSize();
         binding.rvUser.setAdapter(userAdapter);
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < SHELF_COUNT; i++) {
             shelfStates.add(new ShelfLedState(String.format(Locale.CHINA, "000%d", i + 1), "1"));
         }
         shelfAdapter = new ShelfRecycleViewAdapter(this, shelfStates, getItemHeight());
@@ -112,7 +113,7 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
         binding.rvState.hasFixedSize();
         binding.rvState.setAdapter(shelfAdapter);
 
-        Log.e("UUID", UniquenessIdFactory.getId(this));
+        binding.tvTemperatureHumidity.setText(String.format(Locale.CHINA, "温度：%s ℃     湿度：%s %%RH", "0", "0"));
     }
 
     @Override
@@ -216,11 +217,11 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
     @Override
     public void showTemperatureAndHumidity(String wareHouseNo, float temperature, float humidity) {
         String temp = String.valueOf(temperature);
-        if (temp.length() > 5) {
+        if (temp.length() > TEMPERATURE_LENGTH) {
             temp = temp.substring(0, 5);
         }
         String hum = String.valueOf(humidity);
-        if (hum.length() > 5) {
+        if (hum.length() > TEMPERATURE_LENGTH) {
             hum = hum.substring(0, 5);
         }
         binding.tvTemperatureHumidity.setText(String.format(Locale.CHINA, "温度：%s ℃     湿度：%s %%RH", temp, hum));
@@ -229,7 +230,9 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
 
     @Override
     public void showShelfState(String shelfWarehouseNo, ShelfState shelfState) {
-        shelfAdapter.setDataChange(shelfState.Shelfs);
+        if (shelfState != null && shelfState.Shelfs != null && shelfState.Shelfs.size() != 0) {
+            shelfAdapter.setDataChange(shelfState.Shelfs);
+        }
     }
 
 
@@ -270,15 +273,15 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
 
     private void updateTimer() {
         ++second;
-        int sixty = 60;
-        if (second >= sixty) {
+
+        if (second >= SIXTY) {
             ++minute;
-            second -= 60;
-            if (minute >= sixty) {
+            second -= SIXTY;
+            if (minute >= SIXTY) {
                 ++hour;
-                minute -= 60;
-                if (hour >= 24) {
-                    hour -= 24;
+                minute -= SIXTY;
+                if (hour >= TWENTY_FOUR) {
+                    hour -= TWENTY_FOUR;
                     runOnUiThread(() -> {
                         binding.tvYearMonth.setText(DateUtils.getSysDate());
                         binding.tvWeek.setText(DateUtils.getWeek());
