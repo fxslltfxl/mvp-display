@@ -56,7 +56,6 @@ public class AlarmMainActivity extends BaseActivity implements IAlarmView, WarnR
     private ShelfRecycleViewAdapter shelfAdapter;
     private UserInfoAdapter userAdapter;
 
-    private BaseRecycleViewAdapter<UserDisplayVM, OrderCellBinding> userAdapter;
     private List<String> voices;
     private List<UserDisplayVM> userDisplays;
     private VoiceSpeakUtils voiceSpeakUtils;

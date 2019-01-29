@@ -15,7 +15,7 @@
         >
 
         <shape>
-            <solid android:color="@color/end_blue" />
+            <solid android:color="@color/light_sky_blue" />
             <stroke
                 android:width="2dp"
                 android:color="@color/white" />
